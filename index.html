@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Land Finder</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="logo">🏡 Land Finder</div>
+        <nav>
+            <a href="#" onclick="openModal('signupModal')">Signup</a>
+            <a href="#">Home</a>
+            <a href="#">Listings</a>
+            <a href="#" onclick="openModal('contactModal')">Contact</a>
+        </nav>
+    </header>
+
+    <!-- Search Section -->
+    <section class="search-section">
+        <h1>Find Your Dream Land</h1>
+        <input type="text" id="searchBar" placeholder="Search by location...">
+        <button onclick="searchLand()">Search</button>
+    </section>
+
+    <!-- Listings -->
+    <section class="listings" id="listings">
+        <div class="lands-cards">
+            <img src="land.jpeg"class="to-do-image">
+            <div class="land-info">
+                <h2>2 Acres - Ongole</h2>
+                <p>Price: ₹50,00,000</p>
+                <p>Area: 2 Acres</p>
+                <button onclick="viewDetails('ongole',17.48779,29.83984)">viewDetails
+                    <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.123456789!2d80.030000!3d15.500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sYerajarla%20Ongole%20Prakasam%20Andhra%20Pradesh!2z15.50,80.03!5e0!3m2!1sen!2sin!4v0000000000000"
+  width="100%"
+  height="400"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"></iframe>
+  </button>
+            </div>
+        </div>
+    </section>
+    <!-- Listings -->
+    <section class="listings" id="listings">
+        <div class="lands-cards">
+            <img src="OIP.jpg"class="image-to-do">
+            <div class="land-info">
+                <h2>2 Acres - Ongole</h2>
+                <p>Price: ₹50,00,000</p>
+                <p>Area: 2 Acres</p>
+                <button onclick="viewDetails('Ongole', 17.385044, 78.486671)">View Details
+                    <iframe
+  src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3915.123456789!2d80.030000!3d15.500000!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1sYerajarla%20Ongole%20Prakasam%20Andhra%20Pradesh!2z15.50,80.03!5e0!3m2!1sen!2sin!4v0000000000000"
+  width="100%"
+  height="400"
+  style="border:0;"
+  allowfullscreen=""
+  loading="lazy"></iframe>
+                </button>
+            </div>
+        </div>
+
+    <!-- Details Modal -->
+    <div id="detailsModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('detailsModal')">&times;</span>
+            <h2 id="landTitle"></h2>
+            <div id="map" style="height:300px;"></div>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('signupModal')">&times;</span>
+            <h2>Signup</h2>
+            <form id="signupForm">
+                <label>Full Name</label>
+                <input type="text" placeholder="Your Name" required>
+                <label>Email</label>
+                <input type="email" placeholder="you@example.com" required>
+                <label>Password</label>
+                <input type="password" placeholder="••••••••" required>
+                <button type="submit">Create Account</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contact Modal -->
+    <div id="contactModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeModal('contactModal')">&times;</span>
+            <h2>Contact Information</h2>
+            <p>📍 Andhra&Telangana Ongole</p>
+            <p>📞 7207451955</p>
+            <p>chavalanithin196@gmail.com</p>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+    <!-- Google Maps API -->
+    <script async defer src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap"></script>
+</body>
+</html>
